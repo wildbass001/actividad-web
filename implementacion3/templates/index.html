@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Actividad Web Python</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    text-align:center;
+    margin-top:100px;
+    background:white;
+    color:black;
+}
+
+input{
+    padding:10px;
+    width:300px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Actividad Web con Python</h2>
+
+<input id="texto" placeholder="Escribe algo y presiona Enter">
+
+<br>
+
+<button onclick="cambiarColor()">Cambiar colores</button>
+
+<script>
+
+const input = document.getElementById("texto")
+
+input.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+        alert("Texto ingresado: " + input.value)
+    }
+
+})
+
+let estado = 0
+
+function cambiarColor(){
+
+    estado++
+
+    if(estado > 2){
+        estado = 0
+    }
+
+    if(estado === 0){
+        document.body.style.background = "white"
+        document.body.style.color = "black"
+    }
+
+    if(estado === 1){
+        document.body.style.background = "black"
+        document.body.style.color = "white"
+    }
+
+    if(estado === 2){
+        document.body.style.background = "skyblue"
+        document.body.style.color = "red"
+    }
+
+}
+
+</script>
+
+</body>
+</html>
